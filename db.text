@@ -1,0 +1,13 @@
+CREATE(f:Filme{name:'Avatar',ano_lanc:'2009',diretor:'James Cameron',genero:'Aventura'});
+CREATE(f:Filme{name:'Velozes e Furiosos 5',ano_lanc:'2011',diretor:'Justin Lin',genero:'Ação'});
+CREATE(f:Filme{name:'Bastardos Inglórios',ano_lanc:'2009',diretor:'Quentin Tarantino',genero:'Drama'});
+CREATE(f:Filme{name:'Crepusculo',ano_lanc:'2008',diretor:'Catherine Hardwicke',genero:'Drama'});
+CREATE(f:Filme{name:'Vovózona',ano_lanc:'2000',diretor:'Raja Gosnell',genero:'Comédia'});
+CREATE(f:Filme{name:'As Branquelas',ano_lanc:'2004',diretor:'Keenen Ivory Wayans',genero:'Comédia'});
+CREATE(f:Filme{name:'Jurassic Park',ano_lanc:'1993',diretor:'Steven Spielberg',genero:'Ação'});
+
+CREATE(p:Pessoa{name:'Felipe',idade:'20',sexo:'masculino'});
+CREATE(p:Pessoa{name:'Natacha',idade:'22',sexo:'feminino'});
+
+MATCH (a:Pessoa{name:'Felipe'}),(b:Filme{name:'Avatar'}) CREATE(a)-[:AVALIOU{nota:'10',comentario:'Filme muito bom'}]->(b);
+MATCH (a:Pessoa{name:'Natacha'}),(b:Filme{name:'Crepusculo'}) CREATE(a)-[:AVALIOU{nota:'3',comentario:'Filme horrivel'}]->(b)
